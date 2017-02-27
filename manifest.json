@@ -1,0 +1,10 @@
+{
+	"manifest_version": 2,
+	"name" : "extension chrome",
+	"version" : "1.0",
+	"description" : "Extension à destination des recruteurs pour sauvegarder des profils de candidats",
+	"browser_action" : 
+	{
+		"default_popup" : "index.html"
+	}
+}
