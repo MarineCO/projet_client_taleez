@@ -3,8 +3,23 @@
 	"name" : "extension chrome",
 	"version" : "1.0",
 	"description" : "Extension à destination des recruteurs pour sauvegarder des profils de candidats",
+	"permissions:":[
+		"http://*/*",
+		"https://*/*",
+		"[tab]"
+	],
 	"browser_action" : 
 	{
+		"default_icon" : "taleez.png",
 		"default_popup" : "index.html"
+	},
+	"icons": {
+		"128" : "taleez.png"
+	},
+	"content_scrpts" : {
+
+	},
+	"background" : {
+		"scripts" : ["app.js"]
 	}
 }
