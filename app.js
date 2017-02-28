@@ -1,13 +1,1 @@
-(function() {
-
-	"use strict";
-
-	let app = {
-
-		init: function() {
-
-		}
-	}
-
-	app.init();
-})();
+console.log('cette extension est liée a linkedin');

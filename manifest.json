@@ -1,10 +1,29 @@
 {
 	"manifest_version": 2,
-	"name" : "extension chrome",
-	"version" : "1.0",
-	"description" : "Extension à destination des recruteurs pour sauvegarder des profils de candidats",
-	"browser_action" : 
-	{
-		"default_popup" : "index.html"
-	}
+	"name": "taleez",
+	"version": "0.9",
+
+	"description": "Une extension taleez",
+
+	"browser_action": {
+		"default_title": "Ataleez",
+		"default_popup": "index.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://www.linkedin.com/*"],
+			"js": ["app.js"]
+		}
+	],
+
+	"author": "Rachdi Bassem , Ru tan , Marine Colonge",
+
+
+	"permissions": [
+		"tabs",
+		"clipboardRead",
+		"clipboardWrite",
+		"storage"
+	]
 }
