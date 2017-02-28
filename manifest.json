@@ -1,13 +1,18 @@
 {
 	"manifest_version": 2,
+
 	"name": "taleez",
 	"version": "0.9",
 
 	"description": "Une extension taleez",
 
 	"browser_action": {
-		"default_title": "Ataleez",
+
+		"default_icon" : "taleez.png",
 		"default_popup": "index.html"
+	},
+	"icons": {
+		"128" : "taleez.png"
 	},
 
 	"content_scripts": [
@@ -26,4 +31,5 @@
 		"clipboardWrite",
 		"storage"
 	]
+
 }
