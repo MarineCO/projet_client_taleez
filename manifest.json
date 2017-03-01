@@ -11,6 +11,11 @@
 		"default_icon" : "taleez.png",
 		"default_popup": "index.html"
 	},
+	"background":
+	{
+
+		"scripts": ["background.js"]
+	},
 	"icons": {
 		"128" : "taleez.png"
 	},
