@@ -27,7 +27,9 @@
 		}
 	],
 
-	"author": "Rachdi Bassem , Ru tan , Marine Colonge",
+	"author": {
+		"Rachdi Bassem , Ru tan , Marine Colonge"
+	},
 
 
 	"permissions": [
