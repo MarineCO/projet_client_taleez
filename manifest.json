@@ -11,11 +11,13 @@
 		"default_icon" : "taleez.png",
 		"default_popup": "index.html"
 	},
+	
 	"background":
 	{
 
 		"scripts": ["background.js"]
 	},
+
 	"icons": {
 		"128" : "taleez.png"
 	},
@@ -23,7 +25,7 @@
 	"content_scripts": [
 		{
 			"matches": ["https://www.linkedin.com/*"],
-			"js": ["app.js"]
+			"js": ["popup.js", "app.js"]
 		}
 	],
 
