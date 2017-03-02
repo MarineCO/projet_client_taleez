@@ -1,28 +1,23 @@
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
 
-		//extract the name
-		var headings = document.evaluate("/html/body//h1[contains(@class, 'name')]", document, null, XPathResult.ANY_TYPE, null); 
 
-		var thisHeading = headings.iterateNext(); 
-		var name = "";
-		while (thisHeading) {
-			name += thisHeading.textContent + "\n";
-			thisHeading = headings.iterateNext();
-		}
+		var response = ["/html/body//h1[contains(@class, 'name')]", "/html/body//h2[contains(@class, 'headline')]" , "/html/body//div[contains(@class, 'pv-contact-info__ci-container')]"];
 
-		//extract the headline
-		var headings = document.evaluate("/html/body//h2[contains(@class, 'headline')]", document, null, XPathResult.ANY_TYPE, null); 
 
-		var thisHeading = headings.iterateNext(); 
-		var job = "";
-		while (thisHeading) {
-			job += thisHeading.textContent + "\n";
-			thisHeading = headings.iterateNext();
-		}
+		response.forEach(function(element) {
+			var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
 
-		var reponse={name,job};
+			var thisHeading = headings.iterateNext(); 
+			var element = "";
+			while (thisHeading) {
+				element += thisHeading.textContent + "\n";
+				thisHeading = headings.iterateNext();
+			}
+			console.log(element);
 
-		sendResponse(reponse);
+		});
+		sendResponse(response['element']);
+
 	}
-);
+	);
