@@ -2,14 +2,19 @@
 	"manifest_version": 2,
 
 	"name": "taleez",
-	"version": "0.9",
+	"version": "1.0",
 
-	"description": "Une extension taleez",
+	"description": "Extension taleez",
 
 	"browser_action": {
 
 		"default_icon" : "taleez.png",
 		"default_popup": "index.html"
+	},
+	"background":
+	{
+
+		"scripts": ["background.js"]
 	},
 	"icons": {
 		"128" : "taleez.png"
@@ -22,7 +27,9 @@
 		}
 	],
 
-	"author": "Rachdi Bassem , Ru tan , Marine Colonge",
+	"author": [
+		"Rachdi Bassem , Ru tan , Marine Colonge"
+	],
 
 
 	"permissions": [
