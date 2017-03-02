@@ -1,34 +1,46 @@
+
+
+
+
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
 
-		var headings = document.evaluate('/html/body//div[@class="pv-top-card-section__name"] ', document, null, XPathResult.ANY_TYPE, null); 
-/* Search the document for all h2 elements.  
-* The result will likely be an unordered node iterator. */
-var thisHeading = headings.iterateNext(); 
-var name = "";
-while (thisHeading) {
-	name += thisHeading.textContent + "\n";
-	thisHeading = headings.iterateNext();
-	// document.getElementById('job').innerHTML=alertText;
-}
-console.log("votre nom est :"+name);
 
-var headings = document.evaluate("/html/body//h2", document, null, XPathResult.ANY_TYPE, null); 
-/* Search the document for all h2 elements.  
-* The result will likely be an unordered node iterator. */
-var thisHeading = headings.iterateNext(); 
-var job = "";
-while (thisHeading) {
-	job += thisHeading.textContent + "\n";
-	thisHeading = headings.iterateNext();
-	// document.getElementById('job').innerHTML=alertText;
-}
-console.log("votre travaille :"+job);
+		var response = ["/html/body//h1[contains(@class, 'name')]", "/html/body//h2[contains(@class, 'headline')]"];
+		var tab=[];
+		
+		response.forEach(function(element) {
+			var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null); 
 
+			var thisHeading = headings.iterateNext(); 
+			var element = "";
+			while (thisHeading) {
+				element += thisHeading.textContent + "\n";
+				thisHeading = headings.iterateNext();
 
+			}
+			console.log(element);
+			tab.push(element);
+
+		});
+		sendResponse(tab);
+
+		
+
+		
 
 
-var reponse={name,job};
 
-sendResponse(reponse);
-});
+
+
+
+
+
+
+
+
+
+
+
+	}
+	);
