@@ -7,6 +7,9 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 		var name = response[0];
 		var headline = response[1];
 
+		document.getElementById('name').value = name;
+		document.getElementById('headline').value = headline;
+
 	});
 });
 
