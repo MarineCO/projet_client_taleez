@@ -1,24 +1,36 @@
-chrome.runtime.onMessage.addListener(
+(function() {
 
-	function(request, sender, sendResponse) {
+	"use strict"
 
+	var app = {
 
-		var response = ["/html/body//h1[contains(@class, 'name')]", "/html/body//h2[contains(@class, 'headline')]"];
-		var tab = [];
+		XPath: ["/html/body//h1[contains(@class, 'name')]", "/html/body//h2[contains(@class, 'headline')]"],
+		tab: [],
 
-		response.forEach(function(element) {
-			var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
+		init: function() {
+			this.getData();
+		},
 
-			var thisHeading = headings.iterateNext(); 
-			var element = "";
-			while (thisHeading) {
-				element += thisHeading.textContent + "\n";
-				thisHeading = headings.iterateNext();
-			}
+		getData: function() {
+			chrome.runtime.onMessage.addListener(
+				function(request, sender, sendResponse) {
 
-			tab.push(element);
-		});
+					app.XPath.forEach(function(element) {
+						var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
 
-			sendResponse(tab);
+						var thisHeading = headings.iterateNext(); 
+						var element = "";
+						while (thisHeading) {
+							element += thisHeading.textContent + "\n";
+							thisHeading = headings.iterateNext();
+						}
+						app.tab.push(element);
+					});
+
+					sendResponse(app.tab);
+				}
+			);
+		}
 	}
-);
+	app.init();
+})();
