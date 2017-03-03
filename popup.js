@@ -16,9 +16,13 @@
 
 					var name = response[0];
 					var headline = response[1];
+					var email = response[2];
+					var competences = response[3];
 
 					document.getElementById('name').value = name;
 					document.getElementById('headline').value = headline;
+					document.getElementById('mail').value = email;
+					document.getElementById('competence').value = competences;
 				});
 			});
 		}
