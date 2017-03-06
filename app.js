@@ -6,7 +6,6 @@
 
 		XPathName: "/html/body//h1[contains(@class, 'name')]",
 		XPathHeadline: "/html/body//h2[contains(@class, 'headline')]",
-		XPathLinkedin: "/html/body//div[contains(@class, 'pv-contact-info__contact-item')]",
 		XPathEmail: "/html/body//section[contains(@class, 'ci-email')]",
 		XPathCompetences: "/html/body//span[contains(@class, 'pv-skill-entity__skill-name')]",
 		XPathTab: [],
@@ -25,6 +24,13 @@
 
 					app.triggerClick();
 
+					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
+					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
+					
+					var linkedin = allDiv[0].innerHTML;
+					var tel = allDiv[1].innerHTML;
+					
+
 					app.XPathTab.forEach(function(element) {
 						var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
 
@@ -35,9 +41,12 @@
 							thisHeading = headings.iterateNext();
 						}
 						app.tab.push(element);
-						console.log(element);
 					});
+
+					app.tab.push(linkedin, tel);
+					console.log(app.tab);
 					sendResponse(app.tab);
+					
 				}
 				);
 		},
