@@ -26,8 +26,15 @@
 					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
 					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
 
-					var linkedin = allDiv[0].innerHTML;
-					var tel = allDiv[1].innerHTML;
+					if (allDiv[1] === undefined) {
+
+						var linkedin = allDiv[0].innerHTML;
+
+					} else {
+						
+						var linkedin = allDiv[0].innerHTML;
+						var tel = allDiv[1].innerHTML;
+					}
 
 
 					//récupération email
@@ -48,7 +55,7 @@
 						}
 						
 						app.tab.push(element);
-		
+
 					});
 
 					app.tab.push(linkedin, tel, email);
