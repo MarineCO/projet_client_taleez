@@ -6,7 +6,6 @@
 
 		XPathName: "/html/body//h1[contains(@class, 'name')]",
 		XPathHeadline: "/html/body//h2[contains(@class, 'headline')]",
-		XPathEmail: "/html/body//section[contains(@class, 'ci-email')]",
 		XPathCompetences: "/html/body//span[contains(@class, 'pv-skill-entity__skill-name')]",
 		XPathTab: [],
 		tab: [],
@@ -17,7 +16,7 @@
 
 		getData: function() {
 
-			this.XPathTab.push(this.XPathName, this.XPathHeadline, this.XPathLinkedin, this.XPathEmail, this.XPathCompetences);
+			this.XPathTab.push(this.XPathName, this.XPathHeadline, this.XPathCompetences);
 			
 			chrome.runtime.onMessage.addListener(
 				function(request, sender, sendResponse) {
@@ -26,11 +25,18 @@
 
 					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
 					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
-					
+
 					var linkedin = allDiv[0].innerHTML;
 					var tel = allDiv[1].innerHTML;
-					
 
+
+					//récupération email
+					var allSpan = document.querySelectorAll('span.pv-contact-info__contact-item');
+
+					var email = allSpan[0].innerHTML;	
+
+
+					//récupération des autres éléments avec le XPath
 					app.XPathTab.forEach(function(element) {
 						var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
 
@@ -40,13 +46,16 @@
 							element += thisHeading.textContent + "\n";
 							thisHeading = headings.iterateNext();
 						}
+						
 						app.tab.push(element);
+		
 					});
 
-					app.tab.push(linkedin, tel);
+					app.tab.push(linkedin, tel, email);
+
 					console.log(app.tab);
 					sendResponse(app.tab);
-					
+
 				}
 				);
 		},

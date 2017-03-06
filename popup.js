@@ -18,17 +18,17 @@
 
 					var name = response[0];
 					var headline = response[1];
-					var linkedin = response[5];
-					var tel = response[6];
-					var email = response[3];
-					var competences = response[4];
+					var competences = response[2];
+					var linkedin = response[3];
+					var tel = response[4];
+					var email = response[5];
 
 					document.getElementById('name').value = name;
 					document.getElementById('headline').value = headline;
-					document.getElementById('linkedin').value = linkedin;
-					document.getElementById('tel').value = tel;
 					document.getElementById('mail').value = email;
 					document.getElementById('competence').value = competences;
+					document.getElementById('linkedin').value = linkedin;
+					document.getElementById('tel').value = tel;
 				
 				});
 			});
