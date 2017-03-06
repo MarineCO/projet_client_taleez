@@ -23,26 +23,6 @@
 
 					app.triggerClick();
 
-					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
-					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
-
-					if (allDiv[1] === undefined) {
-
-						var linkedin = allDiv[0].innerHTML;
-
-					} else {
-						
-						var linkedin = allDiv[0].innerHTML;
-						var tel = allDiv[1].innerHTML;
-					}
-
-
-					//récupération email
-					var allSpan = document.querySelectorAll('span.pv-contact-info__contact-item');
-
-					var email = allSpan[0].innerHTML;	
-
-
 					//récupération des autres éléments avec le XPath
 					app.XPathTab.forEach(function(element) {
 						var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
@@ -58,9 +38,36 @@
 
 					});
 
-					app.tab.push(linkedin, tel, email);
+					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
+					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
+					
+					if (allDiv[1] == undefined) {
 
-					console.log(app.tab);
+						var linkedin = allDiv[0].innerHTML;
+						app.tab.push(linkedin, "Pas de téléphone");
+
+					} else {
+
+						var linkedin = allDiv[0].innerHTML;
+						var tel = allDiv[1].innerHTML;
+						app.tab.push(linkedin, tel);
+					}
+
+
+					//récupération email
+					var allSpan = document.querySelectorAll('span.pv-contact-info__contact-item');
+					
+					if (allSpan[0] == undefined) {
+
+						app.tab.push("Pas d'email");
+
+					} else {
+
+						var email = allSpan[0].innerHTML;	
+						app.tab.push(email);
+					}
+
+					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
 
 				}
@@ -69,10 +76,10 @@
 
 		triggerClick: function() {
 			var btnContact = document.querySelector('.contact-see-more-less');
-			//var btnCompetence = document.getElementsByClassName('.tooltip-container');
+			var btnCompetence = document.querySelector('.artdeco-container-card-action-bar.pv-skills-section__additional-skills');
 
 			console.log(btnContact);
-			//console.log(btnCompetence);
+			console.log(btnCompetence);
 			
 			btnContact.click();
 			//btnCompetence.click();
