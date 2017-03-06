@@ -4,6 +4,8 @@
 
 	var app = {
 
+		tab: [],
+
 		init: function() {
 			this.displayData();
 		},
@@ -16,13 +18,16 @@
 
 					var name = response[0];
 					var headline = response[1];
-					var email = response[2];
-					var competences = response[3];
+					var linkedin = response[2];
+					var email = response[3];
+					var competences = response[4];
 
 					document.getElementById('name').value = name;
 					document.getElementById('headline').value = headline;
+					document.getElementById('linkedin').value = linkedin;
 					document.getElementById('mail').value = email;
 					document.getElementById('competence').value = competences;
+				
 				});
 			});
 		}
