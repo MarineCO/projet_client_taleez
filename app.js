@@ -21,7 +21,9 @@
 			chrome.runtime.onMessage.addListener(
 				function(request, sender, sendResponse) {
 
+					
 					app.triggerClick();
+					app.tab = [];
 
 					//récupération des autres éléments avec le XPath
 					app.XPathTab.forEach(function(element) {
@@ -33,8 +35,11 @@
 							element += thisHeading.textContent + "\n";
 							thisHeading = headings.iterateNext();
 						}
+
 						
 						app.tab.push(element);
+
+
 
 
 					});
@@ -77,19 +82,25 @@
 					sendResponse(app.tab);
 
 
+
 				}
 				);
 		},
 
 		triggerClick: function() {
 			var btnContact = document.querySelector('.contact-see-more-less');
-			// var btnCompetence = document.querySelector('.artdeco-container-card-action-bar.pv-skills-section__additional-skills');
 
-			console.log(btnContact);
-			// console.log(btnCompetence);
-			
-			btnContact.click();
-			//btnCompetence.click();
+			var event = document.createEvent('MouseEvent');
+
+			event.initEvent('click', true, true);
+			btnContact.dispatchEvent(event);
+
+			window.setTimeout(function() {
+				event.initEvent('click', true, true);
+				btnContact.dispatchEvent(event);
+			}, 100);
+
+
 		},
 
 	}
