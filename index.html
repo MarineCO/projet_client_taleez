@@ -9,18 +9,18 @@
 <body>
 	<div class="container">
 		<h1 class="title">Profil candidat</h1>
-		<form action="">
+		<form action="" method="post"  >
 			<div class="form-group">
 				<label for="name">Nom: </label>
-				<input id="name" type="text" class="form-control">
+				<input id="name" name="name" type="text" class="form-control"  >
 			</div>
 			<div class="form-group">
 				<label for="headline">Intitulé: </label>
-				<input id="headline" type="text" class="form-control">  
+				<input id="headline" name="job" type="text" class="form-control" >  
 			</div>
 			<div class="form-group">
 				<label for="mail">Contact: </label>
-				<input id="mail" type="text" class="form-control">  
+				<input id="mail" name ="contact" type="text" class="form-control" >  
 			</div>
 			<div class="form-group">
 				<label for="competence">Compétences professionnelles: </label>
@@ -34,14 +34,19 @@
 				<label for="formation" >Dernière formation: </label>
 				<input id="formation" type="text" class="form-control">
 			</div>
-			<!-- <div class="form-group">
+			<div class="form-group">
 				<div class="text-center col-md-12">
 					<input class="btn btn-info btn-lg" type="submit" value="Editer">
-					<input class="btn btn-success btn-lg" type="submit" value="Valider">
+					<input class="btn btn-success btn-lg" type="submit" value="Valider" id="valid">
 				</div>
-			</div> -->
+			</div>
 		</form>
+		<div id="result"></div>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="popup.js"></script>
+	<!-- <script src="index.js"></script> -->
+	
+
 </body>
 </html>

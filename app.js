@@ -4,7 +4,10 @@
 
 	var app = {
 
-		XPath: ["/html/body//h1[contains(@class, 'name')]", "/html/body//h2[contains(@class, 'headline')]"],
+		XPathName: "/html/body//h1[contains(@class, 'name')]",
+		XPathHeadline: "/html/body//h2[contains(@class, 'headline')]",
+		XPathCompetences: "/html/body//span[contains(@class, 'pv-skill-entity__skill-name')]",
+		XPathTab: [],
 		tab: [],
 
 		init: function() {
@@ -12,10 +15,16 @@
 		},
 
 		getData: function() {
+
+			this.XPathTab.push(this.XPathName, this.XPathHeadline, this.XPathCompetences);
+			
 			chrome.runtime.onMessage.addListener(
 				function(request, sender, sendResponse) {
 
-					app.XPath.forEach(function(element) {
+					app.triggerClick();
+
+					//récupération des autres éléments avec le XPath
+					app.XPathTab.forEach(function(element) {
 						var headings = document.evaluate(element, document, null, XPathResult.ANY_TYPE, null);
 
 						var thisHeading = headings.iterateNext(); 
@@ -24,13 +33,66 @@
 							element += thisHeading.textContent + "\n";
 							thisHeading = headings.iterateNext();
 						}
+						
 						app.tab.push(element);
+
+
 					});
 
+					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
+					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
+					
+					if (allDiv[1] == undefined) {
+
+						var linkedin = allDiv[0].innerHTML;
+						app.tab.push(linkedin, "Pas de téléphone");
+
+					} else {
+
+						var linkedin = allDiv[0].innerHTML;
+						var tel = allDiv[1].innerHTML;
+						app.tab.push(linkedin, tel);
+					}
+
+
+					//récupération email
+					var allSpan = document.querySelectorAll('span.pv-contact-info__contact-item');
+					
+					if (allSpan[0] == undefined) {
+
+						app.tab.push("Pas d'email");
+
+					} else {
+
+						var email = allSpan[0].innerHTML;	
+						app.tab.push(email);
+					}
+
+					
+
+
+
+
+					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
+
+
 				}
-			);
-		}
+				);
+		},
+
+		triggerClick: function() {
+			var btnContact = document.querySelector('.contact-see-more-less');
+			// var btnCompetence = document.querySelector('.artdeco-container-card-action-bar.pv-skills-section__additional-skills');
+
+			console.log(btnContact);
+			// console.log(btnCompetence);
+			
+			btnContact.click();
+			//btnCompetence.click();
+		},
+
 	}
-	app.init();
+	document.addEventListener("DOMContentLoaded", app.init());
+
 })();
