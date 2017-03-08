@@ -2,7 +2,7 @@
 
 	"use strict"
 
-	var app = {
+	var popup = {
 
 		tab: [],
 
@@ -29,11 +29,11 @@
 					document.getElementById('competence').value = competences;
 					document.getElementById('linkedin').value = linkedin;
 					document.getElementById('tel').value = tel;
-				
+
 				});
 			});
 		}
 	}
-	app.init();
+	popup.init();
 })();
 
