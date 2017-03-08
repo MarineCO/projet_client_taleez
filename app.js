@@ -21,7 +21,6 @@
 			chrome.runtime.onMessage.addListener(
 				function(request, sender, sendResponse) {
 
-					
 					app.triggerClick();
 					app.tab = [];
 
@@ -35,14 +34,11 @@
 							element += thisHeading.textContent + "\n";
 							thisHeading = headings.iterateNext();
 						}
-
 						
 						app.tab.push(element);
 
-
-
-
 					});
+
 
 					//récupération lien linkedin et tél séparément car class identique indifféreciable avec le Xpath
 					var allDiv = document.querySelectorAll('div.pv-contact-info__contact-item');
@@ -73,18 +69,11 @@
 						app.tab.push(email);
 					}
 
-					
-
-
-
 
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
-
-
-
 				}
-				);
+			);
 		},
 
 		triggerClick: function() {
@@ -99,11 +88,9 @@
 				event.initEvent('click', true, true);
 				btnContact.dispatchEvent(event);
 			}, 100);
-
-
 		},
-
 	}
+	
 	document.addEventListener("DOMContentLoaded", app.init());
 
 })();
