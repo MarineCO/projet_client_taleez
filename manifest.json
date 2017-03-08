@@ -35,6 +35,8 @@
 
 
 	"permissions": [
+		"http://*/", 
+		"https://*/",
 		"tabs",
 		"clipboardRead",
 		"clipboardWrite",
