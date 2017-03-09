@@ -7,10 +7,9 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<img src="logo.png" alt="logoTaleez" class="image">
 	<div class="container">
-
-		<h2 class="title">Profil candidat</h2>
-		<form id="addToJSON">
+		<form enctype='application/json' id="addToJSON">
 			<div class="form-group">
 				<label for="name">Nom: </label>
 				<input id="name" name="name" type="text" class="form-control"  >
@@ -36,9 +35,9 @@
 				<input id="competence" name="competence" type="text" class="form-control">
 			</div>
 			<div class="form-group">
-				<div class="text-center col-md-12">
+				<div class="text-center col-md-12" id="saveDiv">
 					<input class="btn btn-success btn-lg" type="submit" value="Sauvegarder" id="save">
-					<span id="status-display"></span>
+					<span id="status-display" class="statusDisplay"></span>
 				</div>
 			</div>
 		</form>

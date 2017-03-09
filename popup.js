@@ -66,7 +66,7 @@
 
 					if (xhr.status == 200) {
 						popup.statusDisplay.innerHTML = 'Saved!';
-						window.setTimeout(window.close, 1000);
+						window.setTimeout(window.close, 2000);
 
 					} else {
 						popup.statusDisplay.innerHTML = 'Error saving: ' + xhr.statusText;
