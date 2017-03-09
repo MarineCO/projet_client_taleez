@@ -70,6 +70,11 @@
 					}
 
 
+					//récupération lien permettant la sauvegarde en pdf à exploiter
+					var allA = document.querySelectorAll('[href]');
+					var savePdfLink = allA[20];
+					
+
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
 				}
@@ -78,15 +83,18 @@
 
 		triggerClick: function() {
 			var btnContact = document.querySelector('.contact-see-more-less');
-
+			var btnThreePoint = document.querySelector('.button-tertiary-medium-round-inverse');
+			
 			var event = document.createEvent('MouseEvent');
 
 			event.initEvent('click', true, true);
 			btnContact.dispatchEvent(event);
+			btnThreePoint.dispatchEvent(event);
 
 			window.setTimeout(function() {
 				event.initEvent('click', true, true);
 				btnContact.dispatchEvent(event);
+				btnThreePoint.dispatchEvent(event);
 			}, 100);
 		},
 	}
