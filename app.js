@@ -72,7 +72,8 @@
 
 					//récupération lien permettant la sauvegarde en pdf à exploiter
 					var allA = document.querySelectorAll('[href]');
-					var savePdfLink = allA[20];
+					var a = allA[20];
+					var savePdfLink = a.getAttribute('href');
 					
 
 					//envoi du tableau contenant les informations vers popup.js
