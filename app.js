@@ -73,13 +73,16 @@
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
 				}
-			);
+				);
 		},
 
 		triggerClick: function() {
 			var btnContact = document.querySelector('.contact-see-more-less');
+			// var btnPdf = document.querySelector('pv-top-card-overflow__trigger');
 
 			var event = document.createEvent('MouseEvent');
+				// btnPdf.dispatchEvent(event);
+
 
 			event.initEvent('click', true, true);
 			btnContact.dispatchEvent(event);

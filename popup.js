@@ -1,7 +1,7 @@
 (function() {
 
 	"use strict"
-
+	var serverUrl='http://localhost:3000/response.php';
 	var popup = {
 
 		tab: [],	
@@ -34,49 +34,29 @@
 			});
 		},
 
-		postJson: function() {
-
+		postJson: function(event) {
 			event.preventDefault();
-
-			var postUrl = 'http://0.0.0.0:3052/insert.php';
-
-			var hr = new XMLHttpRequest();
-			hr.open('POST', postUrl, true);
-
-			var name = document.getElementById('name').value;
-			var headline = document.getElementById('headline').value;
-			var competences = document.getElementById('competence').value;
-			var linkedin = document.getElementById('linkedin').value;
-			var tel = document.getElementById('tel').value;
-			var email = document.getElementById('mail').value;
-
-			var profil = 'name=' + name +
-			'headline=' + headline +
-			'linkedin=' + linkedin +
-			'email=' + email +
-			'tel=' + tel +
-			'competences=' + competences; 
-
-			hr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-			hr.onreadystatechange = function() { 
-
-				if (hr.readyState == 4) {
-					popup.statusDisplay.innerHTML = '';
-
-					if (hr.status == 200) {
-						popup.statusDisplay.innerHTML = 'Infos was sended!';
-						window.setTimeout(window.close, 1200);
-
-					} else {
-						popup.statusDisplay.innerHTML = 'Error ! ' + xhr.statusText;
-					}
-				}
+			var response={
+				name:document.getElementById('name').value ,
+				headline:document.getElementById('headline').value ,
+				email:document.getElementById('mail').value  ,
+				competences:document.getElementById('competence').value  ,
+				linkedin:document.getElementById('linkedin').value  ,
+				tel:document.getElementById('tel').value  
 			};
+			axios({
+				method: 'POST',
+				url:serverUrl,
+				data:response
 
-			hr.send(profil);
+			})
+			.then(function (data) {
+				console.log(data);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 
-			popup.statusDisplay.innerHTML = 'processing...';
 		},
 
 		toLoad: function() {

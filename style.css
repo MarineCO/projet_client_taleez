@@ -1,7 +1,21 @@
+body{
+	
+	/*	background-color: #E0E3DA;*/
+	background-image: url("team.jpg");
+	/*background-repeat:no-repeat;
+	background-position:center center;*/
+}
+
+
 .container {
 	margin-right: 5em;
 	margin-left: 5em;
 }
 .title {
-	width: 6.5em;
+	width: 8.5em;
+
+	
+}
+label{
+	color: ;
 }
