@@ -1,7 +1,7 @@
 (function() {
 
 	"use strict"
-
+	var serverUrl='http://localhost:3000/response.php';
 	var popup = {
 
 		tab: [],	
@@ -34,59 +34,42 @@
 			});
 		},
 
-		addToJSON: function() {
-
+		postJson: function(event) {
+			
 			event.preventDefault();
 
-			var postUrl = 'http://localhost:2018/insert.php';
-
-			var xhr = new XMLHttpRequest();
-			xhr.open('POST', postUrl, true);
-
-			var name = document.getElementById('name').value;
-			var headline = document.getElementById('headline').value;
-			var competences = document.getElementById('competence').value;
-			var linkedin = document.getElementById('linkedin').value;
-			var tel = document.getElementById('tel').value;
-			var email = document.getElementById('mail').value;
-
-			var profil = 'name=' + name +
-			'&headline=' + headline +
-			'&linkedin=' + linkedin +
-			'&email=' + email +
-			'&tel=' + tel +
-			'&competences=' + competences; 
-
-			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-			xhr.onreadystatechange = function() { 
-
-				if (xhr.readyState == 4) {
-					popup.statusDisplay.innerHTML = '';
-
-					if (xhr.status == 200) {
-						popup.statusDisplay.innerHTML = 'Saved!';
-						window.setTimeout(window.close, 2000);
-
-					} else {
-						popup.statusDisplay.innerHTML = 'Error saving: ' + xhr.statusText;
-					}
-				}
+			var response = {
+				name:document.getElementById('name').value ,
+				headline:document.getElementById('headline').value ,
+				email:document.getElementById('mail').value  ,
+				competences:document.getElementById('competence').value  ,
+				linkedin:document.getElementById('linkedin').value  ,
+				tel:document.getElementById('tel').value  
 			};
 
-			xhr.send(profil);
+			axios({
+				method: 'POST',
+				url:serverUrl,
+				data:response
 
-			popup.statusDisplay.innerHTML = 'Saving...';
+			})
+			.then(function (data) {
+				popup.statusDisplay.innerHTML = 'Saved!';
+				//window.setTimeout(window.close, 2000);
+			})
+			.catch(function (error) {
+				popup.statusDisplay.innerHTML = 'Error saving: ';
+			});
 		},
 
 		toLoad: function() {
 
-			window.addEventListener('load', function(evt) {
+			window.addEventListener('load', function(event) {
 
 				popup.statusDisplay = document.getElementById('status-display');
 
 				var saveBtn = document.getElementById('addToJSON');
-				saveBtn.addEventListener('submit', popup.addToJSON);
+				saveBtn.addEventListener('submit', popup.postJson);
 			});
 		}
 	}

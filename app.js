@@ -79,7 +79,7 @@
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
 				}
-			);
+				);
 		},
 
 		triggerClick: function() {
