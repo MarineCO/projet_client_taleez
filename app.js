@@ -70,6 +70,12 @@
 					}
 
 
+					//récupération lien permettant la sauvegarde en pdf à exploiter
+					var allA = document.querySelectorAll('[href]');
+					var a = allA[20];
+					var savePdfLink = a.getAttribute('href');
+					
+
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
 				}
@@ -78,18 +84,18 @@
 
 		triggerClick: function() {
 			var btnContact = document.querySelector('.contact-see-more-less');
-			// var btnPdf = document.querySelector('pv-top-card-overflow__trigger');
-
+			var btnThreePoint = document.querySelector('.button-tertiary-medium-round-inverse');
+			
 			var event = document.createEvent('MouseEvent');
-				// btnPdf.dispatchEvent(event);
-
 
 			event.initEvent('click', true, true);
 			btnContact.dispatchEvent(event);
+			btnThreePoint.dispatchEvent(event);
 
 			window.setTimeout(function() {
 				event.initEvent('click', true, true);
 				btnContact.dispatchEvent(event);
+				btnThreePoint.dispatchEvent(event);
 			}, 100);
 		},
 	}
