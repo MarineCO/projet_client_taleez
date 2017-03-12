@@ -19,8 +19,9 @@
 
 pour executer l'extesnsion pensez  l'ajouter parmie vos extension google et à lancer:
 					
-						-caddy & bs
-						-php -S 0.0.0.0:8080
+						 -git clone https://github.com/MarineCO/projet_client_taleez.git
+						 - cd projet_client_taleez
+						 -php -S 0.0.0.0:8080
 						
 		
 
