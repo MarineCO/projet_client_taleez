@@ -17,7 +17,7 @@
 
 {"name":"Bill Gates","headline":"Co-chair, Bill ","linkedin":"  linkedin.com\/in\/williamhgates","email":"Pas d'email","tel":"Pas de t\u00e9l\u00e9phone","competences":""}
 
-pour executer l'extesnsion pensez  lajouter parmie vos extension google et à lancer:
+pour executer l'extesnsion pensez  l'ajouter parmie vos extension google et à lancer:
 					
 						-caddy & bs
 						-php -S 0.0.0.0:8080
