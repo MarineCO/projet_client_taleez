@@ -1,28 +1,74 @@
 # Extension Google Chrome 
 
-#### Cette extension est disponible  sur chrome permettant de sauvegarder des donées des profils (Linkedin) . 
+##Sommaire
+I. Introduction
+II. Guide d'installation
+III. L'extension
 
 
-#### facilitant ainsi le travail des recruteurs pour la recherche des candidats.
+## I - Introduction
 
-#### Elle scrape les données de chaque profils linkedin sous forme d'un format JSON :( exemple):
+Boxmyjob, entreprise créée en 2014, propose une solution permettant d’épingler les offres d’emploi, les répertorier et de toutes les piloter dans un espace personnel sur Boxmyjob.
+
+Le projet Taleez est né de l'envie de la startup de se rapprocher des entreprises, et plus particulièrement des recruteurs, plutôt que des candidats.
+
+Cette extension chrome a pour objectif de faciliter le travail des recruteurs pour la recherche proactive de candidats. 
+Elle permet de sauvegarder une sélection de données extraites d'un profil (type Linkedin) au format JSON. Ces données sont ensuite rapatriées vers l'environnement taleez du recruteur.
+
+
+## II - Guide d'installation
+
+	1) Prérequis 
+
+Pour pouvoir profiter pleinement de cette extension, une dépendance est nécessaire. Toutes les commandes sont à taper en ligne de commande dans un terminal  : 
+
+**Axios**
+`npm install axios`
+
+ou 
+
+**JQuery**
+`npm install jquery`
+
+
+	2) Mise en place :
+
+	*2 options possibles : 	
+
+		- déploiement de l'extension
+		- chargement de l'extension par l'ajout du dossier contenant l'extension dans la partie:  Plus d'outils => Extensions de votre navigateur chrome. Cette deuxième méthode implique qu'il faut fournir le dossier à chaque recruteur et qu'ils installent manuellement cette extension.
+
+
+## III - Fonctionnement des fichiers
+
+**Server.js**
+Le fichier server.js permet de lancer le serveur sur le port 2929.
+La route "/" renvoie le fichier index.html.
+La route "/sendMail" appelle le fichier mailGun.js pour gérer l'envoi de mails en passant par le module mailGun.
+La route "/data" va lire les données du geojson (“dataGeo.geojson”) et les renvoie pour qu’elles puissent être affichées sur la carte côté front.
 
 
 
-{"name":"Bassem Rachdi","headline":"En recherche de stage ( web d\u00e9veloppeur junior)","linkedin":"  linkedin.com\/in\/bassem-rachdi-69a231128","email":"  bigking3100@gmail.com","tel":"Pas de téléphone","competences":""}
 
-{"name":"Marine Colonge","headline":"Actuellement en formation : web d\u00e9veloppeuse junior","linkedin":"  linkedin.com\/in\/marine-colonge-b90a24128","email":"  marinecolonge@gmail.com","tel":"Pas de téléphone","competences":""}
+
+{"name":"Bassem Rachdi","headline":"En recherche de stage ( web développeur junior)","linkedin":"  linkedin.com\/in\/bassem-rachdi-69a231128","email":"  bigking3100@gmail.com","tel":"Pas de téléphone","competences":""}
+
+{"name":"Marine Colonge","headline":"Actuellement en formation : web développeuse junior","linkedin":"  linkedin.com\/in\/marine-colonge-b90a24128","email":"  marinecolonge@gmail.com","tel":"Pas de téléphone","competences":""}
 
 {"name":"Ru Tan","headline":"Cofondatrice - SAS INNOSIDE ","linkedin":"  linkedin.com\/in\/ru-tan-4543a390","email":"  rtan@innoside.com","tel":"Pas de téléphone","competences":""}
 
-{"name":"Bill Gates","headline":"Co-chair, Bill ","linkedin":"  linkedin.com\/in\/williamhgates","email":"Pas d'email","tel":"Pas de téléphone","competences":""}
 
-pour executer l'extesnsion pensez  l'ajouter parmie vos extension google et à lancer:
-					
-						 -git clone https://github.com/MarineCO/projet_client_taleez.git
-						 - cd projet_client_taleez
-						 -php -S 0.0.0.0:8080
-						
+
+
+## IV - L'extension
+
+
+
 		
 
 
+Auteurs : 
+
+Marine Colonge : https://github.com/MarineCO
+Bassem Rachdi : https://github.com/rachdi
+Ru Tan : https://github.com/rutanjou
