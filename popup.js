@@ -15,8 +15,6 @@
 			chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 				chrome.tabs.sendMessage(tabs[0].id, {sendInfo: true}, function(response) {
 
-					// console.log(response);
-
 					var name = response[0];
 					var headline = response[1];
 					var competences = response[2];
@@ -39,11 +37,11 @@
 			event.preventDefault();
 
 			var response = {
-				name:document.getElementById('name').value ,
-				headline:document.getElementById('headline').value ,
-				email:document.getElementById('mail').value  ,
-				competences:document.getElementById('competence').value  ,
-				linkedin:document.getElementById('linkedin').value  ,
+				name:document.getElementById('name').value,
+				headline:document.getElementById('headline').value,
+				email:document.getElementById('mail').value,
+				competences:document.getElementById('competence').value,
+				linkedin:document.getElementById('linkedin').value,
 				tel:document.getElementById('tel').value  
 			};
 
@@ -51,11 +49,10 @@
 				method: 'POST',
 				url:serverUrl,
 				data:response
-
 			})
 			.then(function (data) {
 				popup.statusDisplay.innerHTML = 'Saved!';
-				//window.setTimeout(window.close, 2000);
+				window.setTimeout(window.close, 2000);
 			})
 			.catch(function (error) {
 				popup.statusDisplay.innerHTML = 'Error saving: ';

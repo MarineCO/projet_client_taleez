@@ -60,21 +60,12 @@
 					var allSpan = document.querySelectorAll('span.pv-contact-info__contact-item');
 					
 					if (allSpan[0] == undefined) {
-
 						app.tab.push("Pas d'email");
 
 					} else {
-
 						var email = allSpan[0].innerHTML;	
 						app.tab.push(email);
 					}
-
-
-					//récupération lien permettant la sauvegarde en pdf à exploiter
-					var allA = document.querySelectorAll('[href]');
-					var a = allA[20];
-					var savePdfLink = a.getAttribute('href');
-					
 
 					//envoi du tableau contenant les informations vers popup.js
 					sendResponse(app.tab);
@@ -97,7 +88,7 @@
 				btnContact.dispatchEvent(event);
 				btnThreePoint.dispatchEvent(event);
 			}, 100);
-		},
+		}
 	}
 	
 	document.addEventListener("DOMContentLoaded", app.init());

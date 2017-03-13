@@ -1,9 +1,14 @@
-body{
-	background-image: url("team1.jpg");
-}
 .container {
 	margin-right: 5em;
 	margin-left: 5em;
+}
+
+.title {
+	width: 6.5em;
+}
+
+body{
+    background-image: url("team1.jpg");
 }
 
 label, .statusDisplay {
@@ -12,12 +17,11 @@ label, .statusDisplay {
 
 .image {
 	float: right;
-	padding-left: 100%;
-	padding-right: 10%;
-	padding-top: 5%;
+	padding-left: 15em;
+	padding-right: 1em;
+	padding-top: 0.5em;
 }
 
 #saveDiv {
 	padding-bottom: 10%;
 }
-
