@@ -13,7 +13,15 @@ Boxmyjob, entreprise créée en 2014, propose une solution permettant d’éping
 Le projet Taleez est né de l'envie de la startup de se rapprocher des entreprises, et plus particulièrement des recruteurs, plutôt que des candidats.
 
 Cette extension chrome a pour objectif de faciliter le travail des recruteurs pour la recherche proactive de candidats. 
-Elle permet de sauvegarder une sélection de données extraites d'un profil (type Linkedin) au format JSON. Ces données sont ensuite rapatriées vers l'environnement taleez du recruteur.
+Elle permet de sauvegarder une sélection de données extraites d'un profil (type Linkedin) au format JSON.
+
+	{"name":"Bassem Rachdi","headline":"En recherche de stage ( web développeur junior)","linkedin":"  linkedin.com\/in\/bassem-rachdi-69a231128","email":"  bigking3100@gmail.com","tel":"Pas de téléphone"}
+
+	{"name":"Marine Colonge","headline":"Actuellement en formation : web développeuse junior","linkedin":"  linkedin.com\/in\/marine-colonge-b90a24128","email":"  marinecolonge@gmail.com","tel":"Pas de téléphone"}
+
+	{"name":"Ru Tan","headline":"Cofondatrice - SAS INNOSIDE ","linkedin":"  linkedin.com\/in\/ru-tan-4543a390","email":"  rtan@innoside.com","tel":"Pas de téléphone"}
+
+Ces données sont ensuite rapatriées vers l'environnement taleez du recruteur.
 
 
 ## II - Guide d'installation
@@ -35,27 +43,34 @@ ou
 
 	*2 options possibles : 	
 
-		- déploiement de l'extension
+		- déploiement de l'extension 
 		- chargement de l'extension par l'ajout du dossier contenant l'extension dans la partie:  Plus d'outils => Extensions de votre navigateur chrome. Cette deuxième méthode implique qu'il faut fournir le dossier à chaque recruteur et qu'ils installent manuellement cette extension.
+
+
+**Déploiement**
+
+
+**Chargement manuel**
 
 
 ## III - Fonctionnement des fichiers
 
-**Server.js**
-Le fichier server.js permet de lancer le serveur sur le port 2929.
-La route "/" renvoie le fichier index.html.
-La route "/sendMail" appelle le fichier mailGun.js pour gérer l'envoi de mails en passant par le module mailGun.
-La route "/data" va lire les données du geojson (“dataGeo.geojson”) et les renvoie pour qu’elles puissent être affichées sur la carte côté front.
+**background.js**
 
 
 
+**app.js**
 
 
-{"name":"Bassem Rachdi","headline":"En recherche de stage ( web développeur junior)","linkedin":"  linkedin.com\/in\/bassem-rachdi-69a231128","email":"  bigking3100@gmail.com","tel":"Pas de téléphone","competences":""}
 
-{"name":"Marine Colonge","headline":"Actuellement en formation : web développeuse junior","linkedin":"  linkedin.com\/in\/marine-colonge-b90a24128","email":"  marinecolonge@gmail.com","tel":"Pas de téléphone","competences":""}
+**popup.js**
 
-{"name":"Ru Tan","headline":"Cofondatrice - SAS INNOSIDE ","linkedin":"  linkedin.com\/in\/ru-tan-4543a390","email":"  rtan@innoside.com","tel":"Pas de téléphone","competences":""}
+
+
+**manifest.json**
+
+
+
 
 
 
