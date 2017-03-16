@@ -33,15 +33,12 @@ Pour pouvoir profiter pleinement de cette extension, une dépendance est nécess
 **Axios**
 `npm install axios`
 
-ou 
-
-**JQuery**
-`npm install jquery`
+Les requêtes axios peuvent être remplacées par des requêtes ajax (et donc utilisation de jQuery à la place d'axios), la configuration de ces 2 formes de requêtes sont quasiment identiques.
 
 
 	2) Mise en place :
 
-	*2 options possibles : 	
+2 options possibles : 	
 
 		- déploiement de l'extension 
 		- chargement de l'extension par l'ajout du dossier contenant l'extension dans la partie:  Plus d'outils => Extensions de votre navigateur chrome. Cette deuxième méthode implique qu'il faut fournir le dossier à chaque recruteur et qu'ils installent manuellement cette extension.
@@ -49,26 +46,48 @@ ou
 
 **Déploiement**
 
+Pour déployer votre extension, il convient de procéder comme suit :
+	1) Créer un fichier zip de votre application
+	2) Créer un compte développeur
+	3) Téléchargez votre application via le dashboard développeur de chrome
+	4) Préparer une fiche contenu précisant la description détaillée de l'application, une icone, une vidéo ou une capture d'écran montrant ce que l'application fait, la catégorie principale de l'application ainsi que la langue.
+	5) Payer les frais d'inscription développeur (5$). Pour plus d'informations sur l'enregistrement [ici](https://developer.chrome.com/webstore?visit_id=1-636252590093195208-2055888407&rd=2)
+	6) Publier votre application
+
+
+Pour plus de précisions concernant la publication d'une extension, je vous invite à vous reporter à la documentation de chrome.
+[Publier votre extension](https://developer.chrome.com/webstore/publish)
+[Installation](https://developer.chrome.com/webstore/inline_installation)
+
 
 **Chargement manuel**
 
+Pour charger manuellement l'extension, il faut se rendre dans l'option "Plus d'outils" de votre navigateur chrome, puis "Extensions" et activer le mode développeur. 
+Il ne vous reste plus qu'à charger l'extension non empaquetée via le bouton dédié.
+Pour tout changement apporté dans vos fichiers, n'oubliez pas d'actualiser l'extension avant de l'utiliser.
+
+Pour plus de détails, vous pouvez vous rendre sur la doc de chrome : [ici](https://developer.chrome.com/extensions/external_extensions)
 
 ## III - Fonctionnement des fichiers
 
 **background.js**
 
+En liaison avec app.js
 
 
 **app.js**
 
+En liaison avec popup.js
 
 
 **popup.js**
 
+En liaison avec index.html
 
 
 **manifest.json**
 
+Mise en place de la structure de la popup et de ces fonctionnalités/options.
 
 
 
