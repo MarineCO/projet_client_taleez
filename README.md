@@ -73,16 +73,22 @@ Pour plus de détails, vous pouvez vous rendre sur la doc de chrome : [ici](http
 **background.js**
 
 En liaison avec app.js
-
+Script de fond
 
 **app.js**
 
 En liaison avec popup.js
+Gère le scrappage des informations
 
 
 **popup.js**
 
 En liaison avec index.html
+Gère l'affichage des données dans la popup
+
+
+**index.html**
+Gère l'affichage de la popup
 
 
 **manifest.json**
