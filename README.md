@@ -55,7 +55,7 @@ Pour déployer votre extension, il convient de procéder comme suit :
 	6) Publier votre application
 
 
-Pour plus de précisions concernant la publication d'une extension, je vous invite à vous reporter à la documentation de chrome.
+Pour plus de précisions concernant la publication d'une extension, je vous invite à lire ceci :
 [Publier votre extension](https://developer.chrome.com/webstore/publish)
 [Installation](https://developer.chrome.com/webstore/inline_installation)
 
@@ -88,16 +88,6 @@ En liaison avec index.html
 **manifest.json**
 
 Mise en place de la structure de la popup et de ces fonctionnalités/options.
-
-
-
-
-
-
-## IV - L'extension
-
-
-
 		
 
 
