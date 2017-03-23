@@ -44,7 +44,7 @@ Les requêtes axios peuvent être remplacées par des requêtes ajax (et donc ut
 		- chargement de l'extension par l'ajout du dossier contenant l'extension dans la partie:  Plus d'outils => Extensions de votre navigateur chrome. Cette deuxième méthode implique qu'il faut fournir le dossier à chaque recruteur et qu'ils installent manuellement cette extension.
 
 
-**Déploiement**
+**Déploiement via le Chrome Web Store**
 
 Pour déployer votre extension, il convient de procéder comme suit :
 	1) Créer un fichier zip de votre application
