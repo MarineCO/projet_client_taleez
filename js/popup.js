@@ -52,7 +52,7 @@
 			})
 			.then(function (data) {
 				popup.statusDisplay.innerHTML = 'Saved!';
-				//window.setTimeout(window.close, 2000);
+				window.setTimeout(window.close, 2000);
 			})
 			.catch(function (error) {
 				popup.statusDisplay.innerHTML = 'Error saving: ';
