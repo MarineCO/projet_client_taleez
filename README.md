@@ -84,6 +84,7 @@ Gère le scrappage des informations
 **popup.js**
 
 En liaison avec index.html
+Ne pas oublier de modifier la variable serverUrl (1ère variable dans le fichier)
 Gère l'affichage des données dans la popup
 
 
