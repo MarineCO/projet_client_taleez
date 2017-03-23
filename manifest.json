@@ -8,24 +8,24 @@
 
 	"browser_action": {
 
-		"default_icon" : "taleez.png",
+		"default_icon" : "img/taleez.png",
 		"default_popup": "index.html"
 	},
 	
 	"background":
 	{
 
-		"scripts": ["background.js"]
+		"scripts": ["js/background.js"]
 	},
 
 	"icons": {
-		"128" : "taleez.png"
+		"128" : "img/taleez.png"
 	},
 
 	"content_scripts": [
 		{
 			"matches": ["https://www.linkedin.com/*"],
-			"js": ["app.js","axios.min.js"]
+			"js": ["js/app.js","js/axios.min.js"]
 		}
 	],
 

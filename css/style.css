@@ -8,7 +8,7 @@
 }
 
 body{
-    background-image: url("team1.jpg");
+    background-image: url("../img/team1.jpg");
 }
 
 label, .statusDisplay {
