@@ -117,7 +117,7 @@ ou un message d'erreur :
 ![Imgur](http://i.imgur.com/SDSv5Jz.png)
 
 
-Si la sauvegarde s'est bien déroulé, le recruteur peut poursuivre sa recherche et se diriger sur un autre profil après la fermeture automatique de la popup.
+Si la sauvegarde s'est bien déroulée, le recruteur peut poursuivre sa recherche et se diriger sur un autre profil après la fermeture automatique de la popup.
 
 
 Auteurs : 
