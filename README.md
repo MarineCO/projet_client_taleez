@@ -94,8 +94,30 @@ Gère l'affichage de la popup
 
 **manifest.json**
 
-Mise en place de la structure de la popup et de ces fonctionnalités/options.
-		
+Mise en place de la structure de la popup et de ces fonctionnalités/options.    
+
+## IV - L'extension
+
+Il faut dans un premier temps se connecter sur Linkedin et se rendre sur le profil choisi, puis cliquer sur l'extension qui se matérialise sous la forme du logo de Taleez et apparait en haut à droite de la barre d'adresse du navigateur Chrome.
+Si vous n'êtes pas sur un profil linkedin, la récupération des données ne pourra s'effectuer correctement.
+
+Activation extension sur un site lambda :
+![Imgur](http://i.imgur.com/lXFauDM.png)
+
+
+Activation extension sur un profil linkedin :
+![Imgur](http://i.imgur.com/k5V1xRJ.png)
+
+Une fois le profil voulu scanné, il ne vous reste plus qu'à sauvegarder ce dernier.
+
+La réussite de l'opération se matérialisera par un message de réussite : 
+![Imgur](http://i.imgur.com/5w9Hdr8.png)
+
+ou un message d'erreur :
+![Imgur](http://i.imgur.com/SDSv5Jz.png)
+
+
+Si la sauvegarde s'est bien déroulé, le recruteur peut poursuivre sa recherche et se diriger sur un autre profil après la fermeture automatique de la popup.
 
 
 Auteurs : 
