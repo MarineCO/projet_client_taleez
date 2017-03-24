@@ -110,10 +110,10 @@ Activation extension sur un profil linkedin :
 
 Une fois le profil voulu scanné, il ne vous reste plus qu'à sauvegarder ce dernier.
 
-La réussite de l'opération se matérialisera par un message de réussite : 
+La réussite de l'opération se matérialisera par un message de réussite :      
 ![Imgur](http://i.imgur.com/5w9Hdr8.png)
 
-ou un message d'erreur :
+ou un message d'erreur :       
 ![Imgur](http://i.imgur.com/SDSv5Jz.png)
 
 
